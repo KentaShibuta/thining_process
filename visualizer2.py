@@ -20,6 +20,10 @@ df_2 = pd.DataFrame(df_2)
 df_2.columns = ['time', 'a', 'b', 'c', 'interface_right_displacement_2']
 print(df_2)
 
-plt.plot(df_1['time'], df_1['interface_right_displacement'])
-plt.plot(df_2['time'], df_2['interface_right_displacement_2'])
+plt.xlabel('time')
+plt.ylabel('right interface displacement')
+
+plt.plot(df_1['time'], df_1['interface_right_displacement'], label="Euler")
+plt.plot(df_2['time'], df_2['interface_right_displacement_2'], label="Newmark beta")
+plt.legend()
 plt.show()
